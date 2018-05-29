@@ -1,3 +1,5 @@
+import os
+import sys
 import csv
 import random
 from pathlib import Path
@@ -43,10 +45,8 @@ def plot_model(data_file: Path, w: float, b: float):
             x.append(float(data["x"]))
             y.append(float(data["y"]))
 
-    # Three subplots sharing both x/y axes
-    plt.figure(figsize=(5, 5))
-
     # Data and line graph
+    plt.figure(figsize=(5, 5))
     plt.plot(x, y, 'o')
     plt.plot(x, [value * w + b for value in x])
     plt.title("Data points and generated line")
