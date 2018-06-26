@@ -42,7 +42,7 @@ class Input(BasicLayer):
             raise ValueError("The inputs fed to {} should be of shape [{}, m]."
                              "Found [{}, m] instead.".format(self.name, self.neurons, inputs.shape[0]))
 
-        self.output = input
+        self.output = inputs
 
 
 class FullyConnected(BasicLayer):
