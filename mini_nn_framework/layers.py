@@ -121,7 +121,7 @@ class FullyConnected(BasicLayer):
             print("Layer {} - dB\n{}".format(self.name, self.dB))
 
         if type(self.input_layer) != Input:
-            self.input_layer.dA = self.dW.transpose() * self.dZ
+            self.input_layer.dA = np.dot(self.dW.transpose(), self.dZ)
 
     def parameters_update(self, learning_rate: float):
 
@@ -199,7 +199,7 @@ class OutputBinary(BasicLayer):
             print("Layer {} - dB\n{}".format(self.name, self.dB))
 
         if type(self.input_layer) != Input:
-            self.input_layer.dA = self.dW.transpose() * self.dZ
+            self.input_layer.dA = np.dot(self.dW.transpose(), self.dZ)
 
     def parameters_update(self, learning_rate: float):
 
