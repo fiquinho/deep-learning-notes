@@ -85,7 +85,7 @@ class FullyConnected(BasicLayer):
         self.dB = None
 
     def initialize_parameters(self):
-        self.W = np.random.rand(self.neurons, self.input_layer.neurons)
+        self.W = np.random.normal(size=(self.neurons, self.input_layer.neurons))
         self.B = np.zeros([self.neurons, 1])
 
     def print_parameters(self):
@@ -162,7 +162,7 @@ class OutputBinary(BasicLayer):
         self.dB = None
 
     def initialize_parameters(self):
-        self.W = np.random.rand(self.neurons, self.input_layer.neurons)
+        self.W = np.random.normal(size=(self.neurons, self.input_layer.neurons))
         self.B = np.zeros([self.neurons, 1])
 
     def print_parameters(self):
